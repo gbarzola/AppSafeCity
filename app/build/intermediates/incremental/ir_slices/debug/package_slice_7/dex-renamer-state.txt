@@ -1,0 +1,4 @@
+#Mon Sep 24 00:48:15 PET 2018
+base.0=/Users/gerardo/Downloads/appSafeCity/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex
