@@ -17,13 +17,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import app.upc.com.appsafecity.R;
 
@@ -37,14 +42,25 @@ public class TercerFragment extends Fragment {
     ImageView imagenFoto;
     String rutaFoto;
     View v;
+    Spinner spinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_tercer, container, false);
-        botonFoto = v.findViewById(R.id.btnCapturaFoto);
-        imagenFoto = v.findViewById(R.id.imgIncidenciaPrincipal);
+         // Inflate the layout for this fragment
+         v = inflater.inflate(R.layout.fragment_tercer, container, false);
+         botonFoto = v.findViewById(R.id.btnCapturaFoto);
+         imagenFoto = v.findViewById(R.id.imgIncidenciaPrincipal);
+         spinner = v.findViewById(R.id.spnTipo);
+         List<String> list = new ArrayList<String>();
+         list.add("Robo");
+         list.add("Atropello");
+         list.add("Consumo de drogas");
+         list.add("Pelea callejera   ");
+         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_list_item_1,list);
+         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+         spinner.setAdapter(arrayAdapter);
+
 
         if (Build.VERSION.SDK_INT >=23 ){
             requestPermissions(new  String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);

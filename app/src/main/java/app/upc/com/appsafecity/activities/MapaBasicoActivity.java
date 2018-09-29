@@ -69,17 +69,17 @@ public class MapaBasicoActivity extends AppCompatActivity implements OnMapReadyC
         googleMap.setTrafficEnabled(true);
 
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(-12.04592, -77.030565))
-                .title("Centro de Lima")
+                .position(new LatLng(-12.045226, -77.0397464))
+                .title("Municipalidad de Lima")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(-12.044956, -77.029831))
-                .title("Palacio de Gobierno"));
+                .position(new LatLng(-12.0495386, -77.0414517))
+                .title("Comisaria Monserrat"));
 
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(-12.046661, -77.029544))
-                .title("Catedral"));
+                .position(new LatLng(-12.0495386, -77.0415375))
+                .title("Comisaria San Andres"));
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-12.04592, -77.030565), 15));
 
